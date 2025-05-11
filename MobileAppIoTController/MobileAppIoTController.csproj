@@ -70,4 +70,9 @@
 		<PackageReference Include="Syncfusion.Maui.Gauges" Version="29.1.41" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
+	  <Folder Include="Views\" />
+	</ItemGroup>
+
 </Project>
