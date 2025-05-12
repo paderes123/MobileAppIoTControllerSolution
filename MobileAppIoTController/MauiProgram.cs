@@ -1,5 +1,9 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
+using MobileAppIoTController.Services;
+using MobileAppIoTController.Services.Interfaces;
+using MobileAppIoTController.ViewModels;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace MobileAppIoTController;
 
@@ -18,9 +22,15 @@ public static class MauiProgram
 			});
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.ConfigureSyncfusionCore();
+        builder.Logging.AddDebug();
 #endif
+        builder.Services.AddSingleton<SwitchStatesViewModel>();
 
-		return builder.Build();
+        builder.Services.AddSingleton<IIoTService, FirebaseIoTService>();
+        return builder.Build();
 	}
 }
+
+
+

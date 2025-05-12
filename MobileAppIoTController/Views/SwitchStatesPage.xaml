@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileAppIoTController.Views.SwitchStatesPage"
+             xmlns:viewModels="clr-namespace:MobileAppIoTController.ViewModels"
+             x:DataType="viewModels:SwitchStatesViewModel"
+             xmlns:toolkit="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             Title="{Binding Title}">
+
+    <Grid>
+        <ScrollView VerticalScrollBarVisibility="Never">
+            <Border
+                    Stroke="#CAC4D0"
+                    VerticalOptions="Center"
+                    Padding="20"
+                    WidthRequest="{OnPlatform Android=356,
+                                              iOS=356,
+                                              MacCatalyst=386,
+                                              WinUI=386}">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                    <Label Text="Switch1" 
+                           FontSize="16" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    <buttons:SfSwitch Grid.Column="1" IsOn="{Binding SwitchStates.Switch1}">
+                        <buttons:SfSwitch.Behaviors>
+                            <toolkit:EventToCommandBehavior EventName="StateChanged"
+                                                            Command="{Binding Switch1StateChangedCommand}"/>
+                        </buttons:SfSwitch.Behaviors>
+                    </buttons:SfSwitch>
+
+                    <Label Text="Switch2" 
+                           Grid.Column="0"
+                           Grid.Row="1"
+                           FontSize="16" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    <buttons:SfSwitch Grid.Column="1" Grid.Row="1" IsOn="{Binding SwitchStates.Switch2}">
+                        <buttons:SfSwitch.Behaviors>
+                            <toolkit:EventToCommandBehavior EventName="StateChanged"
+                                     Command="{Binding Switch2StateChangedCommand}"/>
+                        </buttons:SfSwitch.Behaviors>
+                    </buttons:SfSwitch>
+
+                    <Label Text="Switch3" 
+                           Grid.Column="0"
+                           Grid.Row="2"
+                           FontSize="16" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    <buttons:SfSwitch Grid.Column="2" Grid.Row="2" IsOn="{Binding SwitchStates.Switch3}">
+                        <buttons:SfSwitch.Behaviors>
+                            <toolkit:EventToCommandBehavior EventName="StateChanged"
+                                     Command="{Binding Switch3StateChangedCommand}"/>
+                        </buttons:SfSwitch.Behaviors>
+                    </buttons:SfSwitch>
+
+                    <Label Text="Switch4" 
+                           Grid.Column="0"
+                           Grid.Row="3"
+                           FontSize="16" 
+                           VerticalTextAlignment="Center"
+                           HorizontalTextAlignment="Center"/>
+                    <buttons:SfSwitch Grid.Column="2"  Grid.Row="3" IsOn="{Binding SwitchStates.Switch4}">
+                        <buttons:SfSwitch.Behaviors>
+                            <toolkit:EventToCommandBehavior EventName="StateChanged"
+                                     Command="{Binding Switch4StateChangedCommand}"/>
+                        </buttons:SfSwitch.Behaviors>
+                    </buttons:SfSwitch>
+
+                    <Label Text="Switch5" 
+                        Grid.Column="0"
+                        Grid.Row="4"
+                        FontSize="16" 
+                        VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center"/>
+                    <buttons:SfSwitch Grid.Column="2" Grid.Row="4" IsOn="{Binding SwitchStates.Switch5}">
+                        <buttons:SfSwitch.Behaviors>
+                            <toolkit:EventToCommandBehavior EventName="StateChanged"
+                                     Command="{Binding Switch5StateChangedCommand}"/>
+                        </buttons:SfSwitch.Behaviors>
+                    </buttons:SfSwitch>
+                </Grid>
+            </Border>
+        </ScrollView>
+    </Grid>
+</ContentPage>
