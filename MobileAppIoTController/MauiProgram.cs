@@ -27,6 +27,7 @@ public static class MauiProgram
 #endif
         builder.Services.AddSingleton<SwitchStatesViewModel>();
         builder.Services.AddSingleton<TextMessageViewModel>();
+		builder.Services.AddSingleton<TemperatureViewModel>();
 
         builder.Services.AddSingleton<IIoTService, FirebaseIoTService>();
         return builder.Build();

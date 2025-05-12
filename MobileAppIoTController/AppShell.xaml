@@ -11,13 +11,21 @@
     <TabBar FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="Switch States"
+            Icon="thermometer.png"
             ContentTemplate="{DataTemplate views:SwitchStatesPage}"
             Route="SwitchStatesPage" />
 
         <ShellContent
             Title="Text Message"
+            Icon="message.png"
             ContentTemplate="{DataTemplate views:TextMessagePage}"
             Route="TextMessagePage" />
+
+        <ShellContent
+            Title="Temperature"
+            Icon="light_switch.png"
+            ContentTemplate="{DataTemplate views:TemperaturePage}"
+            Route="TemperaturePage" />
     </TabBar>
 </Shell>
     
