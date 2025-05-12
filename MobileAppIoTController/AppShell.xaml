@@ -8,11 +8,21 @@
     xmlns:views="clr-namespace:MobileAppIoTController.Views"
     Title="MobileAppIoTController">
 
-    <ShellContent
-        ContentTemplate="{DataTemplate views:SwitchStatesPage}"
-        Route="SwitchStatesPage" />
+    <TabBar FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Switch States"
+            ContentTemplate="{DataTemplate views:SwitchStatesPage}"
+            Route="SwitchStatesPage" />
 
+        <ShellContent
+            Title="Text Message"
+            ContentTemplate="{DataTemplate views:TextMessagePage}"
+            Route="TextMessagePage" />
+    </TabBar>
 </Shell>
+    
+    
+    
 
     
     
